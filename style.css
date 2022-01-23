@@ -9,7 +9,7 @@ main {
 
 .hero {
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: minmax(300px, 2fr) 3fr;
     grid-auto-rows: 550px;
     max-height: 400px;
 }
@@ -60,7 +60,7 @@ main {
 
 .dishes-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(150px, 200px));
+    grid-template-columns: repeat(auto-fit, minmax(75px, 200px));
     grid-auto-rows: 1fr;
     gap: 25px;
     justify-content: center;
@@ -83,7 +83,7 @@ main {
 .menu-grid {
     display: grid;
     gap: 25px;
-    grid-template-columns: repeat(5, minmax(100px, 250px));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
     justify-content: center;
 }
 
@@ -107,3 +107,21 @@ main {
     text-align: center;
     margin-bottom: 50px;
 }
+
+/*
+Ítems es el nombre que se le da a los hijos del contenedor: True
+CSS Grid Layout es una especificación de CSS para implementar grillas usando un sistema de dos dimensiones: True
+La propiedad que determina el orden de llenado de la grilla es: grid-auto-flow
+Para declarar áreas en el contenedor de la grilla debes usar: grid-template-areas
+Los tracks de una grilla son conjuntos de celdas que ocupan varias filas y columnas: Falso
+Para determinar las columnas y filas de la grilla debemos comenzar por fijarnos en los elementos más grandes a posicionar que se podrían considerar celdas: False
+Si un grid tiene la propiedad grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); su comportamiento va a ser: Ensancha las columnas para que ocupen todo el espacio del contenedor.
+Si quieres que una columna tenga un ancho mínimo de 50 pixeles y un máximo definido por la cantidad de contenido debes usar: minmax(50px, max-content)
+Esta unidad representa una fracción del espacio de la grilla: fr
+grid-column-start y grid-column-end son las propiedades que le indican a una celda en que columna comienza y en cual termina: true
+Para crear un grid de 3 filas y 2 columnas debes usar: grid-template-columns: 100px 200px; grid-template-rows: repeat(3, 1fr);
+Para definir los espacios entre columnas o filas usas la propiedad: gap
+El contenedor de la grilla siempre debe tener la propiedad: display: grid
+El espacio entre cuatro líneas que representa la unidad mínima que puede tener un grid se llama: Celda
+CSS Grid Layout es una especificación de CSS para implementar grillas usando un sistema de tres dimensiones: Falso
+*/
